@@ -1,8 +1,130 @@
-{
-  "id": 1,
-  "idUsuario": 1,
-  "fecha": "2025-06-20T14:30:00-03",
-  "kmRecorridos": 5.0,
-  "caloriasQuemadas": 205.0,
-  "velocidadPromedio": 10.0
-}
+[
+  {
+    "id": 1,
+    "idUsuario": 1,
+    "fecha": "2025-06-20T14:30:00-03",
+    "kmRecorridos": 5.0,
+    "caloriasQuemadas": 205.0,
+    "velocidadPromedio": 10.0
+  },
+  {
+    "id": 1,
+    "idUsuario": 1,
+    "fecha": "2025-06-20T08:00:48-03",
+    "kmRecorridos": 3.5,
+    "caloriasQuemadas": 150.0,
+    "velocidadPromedio": 30.0
+  },
+  {
+    "id": 2,
+    "idUsuario": 2,
+    "fecha": "2025-06-20T18:00:48-03",
+    "kmRecorridos": 4.0,
+    "caloriasQuemadas": 200.0,
+    "velocidadPromedio": 45.0
+  },
+  {
+    "id": 3,
+    "idUsuario": 1,
+    "fecha": "2025-06-21T07:30:48-03",
+    "kmRecorridos": 5.0,
+    "caloriasQuemadas": 250.0,
+    "velocidadPromedio": 60.0
+  },
+  {
+    "id": 4,
+    "idUsuario": 3,
+    "fecha": "2025-06-21T19:00:48-03",
+    "kmRecorridos": 4.2,
+    "caloriasQuemadas": 180.0,
+    "velocidadPromedio": 50.0
+  },
+  {
+    "id": 5,
+    "idUsuario": 4,
+    "fecha": "2025-06-22T09:00:48-03",
+    "kmRecorridos": 3.0,
+    "caloriasQuemadas": 120.0,
+    "velocidadPromedio": 25.0
+  },
+  {
+    "id": 6,
+    "idUsuario": 1,
+    "fecha": "2025-06-22T19:30:48-03",
+    "kmRecorridos": 6.0,
+    "caloriasQuemadas": 300.0,
+    "velocidadPromedio": 70.0
+  },
+  {
+    "id": 7,
+    "idUsuario": 2,
+    "fecha": "2025-06-23T06:45:48-03",
+    "kmRecorridos": 5.5,
+    "caloriasQuemadas": 270.0,
+    "velocidadPromedio": 65.0
+  },
+  {
+    "id": 8,
+    "idUsuario": 3,
+    "fecha": "2025-06-23T20:15:48-03",
+    "kmRecorridos": 4.5,
+    "caloriasQuemadas": 190.0,
+    "velocidadPromedio": 48.0
+  },
+  {
+    "id": 9,
+    "idUsuario": 4,
+    "fecha": "2025-06-24T07:00:48-03",
+    "kmRecorridos": 2.8,
+    "caloriasQuemadas": 100.0,
+    "velocidadPromedio": 20.0
+  },
+  {
+    "id": 10,
+    "idUsuario": 1,
+    "fecha": "2025-06-24T18:30:48-03",
+    "kmRecorridos": 4.8,
+    "caloriasQuemadas": 220.0,
+    "velocidadPromedio": 55.0
+  },
+  {
+    "id": 11,
+    "idUsuario": 2,
+    "fecha": "2025-06-25T08:15:48-03",
+    "kmRecorridos": 3.6,
+    "caloriasQuemadas": 160.0,
+    "velocidadPromedio": 35.0
+  },
+  {
+    "id": 12,
+    "idUsuario": 3,
+    "fecha": "2025-06-25T19:00:48-03",
+    "kmRecorridos": 5.2,
+    "caloriasQuemadas": 280.0,
+    "velocidadPromedio": 75.0
+  },
+  {
+    "id": 13,
+    "idUsuario": 4,
+    "fecha": "2025-06-26T09:00:48-03",
+    "kmRecorridos": 3.3,
+    "caloriasQuemadas": 130.0,
+    "velocidadPromedio": 27.0
+  },
+  {
+    "id": 14,
+    "idUsuario": 1,
+    "fecha": "2025-06-26T20:30:48-03",
+    "kmRecorridos": 6.2,
+    "caloriasQuemadas": 320.0,
+    "velocidadPromedio": 80.0
+  },
+  {
+    "id": 15,
+    "idUsuario": 2,
+    "fecha": "2025-06-27T07:45:48-03",
+    "kmRecorridos": 4.4,
+    "caloriasQuemadas": 210.0,
+    "velocidadPromedio": 50.0
+  }
+]

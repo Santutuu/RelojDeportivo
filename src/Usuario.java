@@ -1,3 +1,5 @@
+import java.util.List;
+
 
 public class Usuario {
     
@@ -79,6 +81,8 @@ public class Usuario {
         this.genero = genero;
     }
 
-    // Método adicional
-    //public void registrarActividad(int actividad);
+    public List<Actividad> obtenerActividades() {
+
+        return Repositorio.getActividadesPorUsuario(this.id);
+    }
 }

@@ -20,19 +20,18 @@ public class Main {
             Date fecha = new Date(utilFecha.getTime());
 
             Actividad a1 = new Actividad(1, 1, fecha ,5.0f, 205.0, 10.0);
-
-            
-            Almacenamiento almacenamiento = new Almacenamiento();
     
-            almacenamiento.guardarDatosEnArchivo(a1, "actividades.json");
+            Almacenamiento.guardarDatosEnArchivo(a1, "actividades.json");
     
             List<Actividad> listaActividades = new ArrayList<>();
             
     
-            listaActividades = almacenamiento.leerDatosDesdeArchivo("actividad1.json");
+            listaActividades = Almacenamiento.leerDatosDesdeArchivo("actividad1.json");
     
             imprimirActividades(listaActividades);
            
+        
+            
         }
     
     

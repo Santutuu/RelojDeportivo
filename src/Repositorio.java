@@ -19,6 +19,8 @@ public class Repositorio {
     
     
     public static List<Actividad> getActividadesPorUsuario(int idUsuario) {
+
+        // Utiliza la clase Almacenamiento para leer las actividades desde el archivo
         
         List<Actividad> actividades = almacenamiento.leerDatosDesdeArchivo("repositorioActividades.json");
         
