@@ -1,6 +1,5 @@
-import java.util.List;
 
-import Usuario;
+import java.util.List;
 
 public class ConsejoMotivacional {
 

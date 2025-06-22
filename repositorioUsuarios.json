@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "nombreCompleto": "Juan Perez",
+  "email": "santinodad@gmail.com",
+  "edad": 20,
+  "peso": 5.0,
+  "altura": 5.0,
+  "genero": "Masculino"
+}{
+  "id": 2,
+  "nombreCompleto": "Lucía Gómez",
+  "email": "lucia.gomez@gmail.com",
+  "edad": 25,
+  "peso": 6.8,
+  "altura": 4.2,
+  "genero": "Femenino"
+}

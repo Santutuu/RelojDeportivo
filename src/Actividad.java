@@ -1,10 +1,11 @@
-import java.sql.Date;
+
+import java.util.Date;
 
 public class Actividad {
 
     private int id;
     private int idUsuario;
-    private Date fecha;
+    private Date fecha; // Fecha de la actividad
     private float kmRecorridos;
     private double caloriasQuemadas;
     private double velocidadPromedio;
@@ -12,7 +13,7 @@ public class Actividad {
     
 
 
-public Actividad(int id, int idUsuario, Date fecha, float kmRecorridos, double caloriasQuemadas, double velocidadPromedio) {
+public Actividad(int id, int idUsuario, Date fecha ,float kmRecorridos, double caloriasQuemadas, double velocidadPromedio) {
         this.id = id;
         this.idUsuario = idUsuario;
         this.fecha = fecha;
@@ -21,6 +22,9 @@ public Actividad(int id, int idUsuario, Date fecha, float kmRecorridos, double c
         this.velocidadPromedio = velocidadPromedio;
 }
 
+public Actividad() {
+    
+}
    
     public int getId() {
         return id;

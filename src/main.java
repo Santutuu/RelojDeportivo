@@ -1,49 +1,59 @@
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken; // Type Token para manejar listas como List<Actividad>
 
-import java.io.FileReader;
-import java.lang.reflect.Type;
-import java.text.SimpleDateFormat; // sirve para formatear fechas
-import java.util.*; // importa todos los paquetes de util como scanner
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 
 
 
 public class Main {
+
+ 
+
     public static void main(String[] args) {
-        try {
-            // Configuración del formato de fecha
-            Gson gson = new GsonBuilder() // crea una instancia de Gson personalizada
-                    .setDateFormat("yyyy-MM-dd'T'HH:mm:ssX")
-                    .create();
+        // Aquí puedes crear instancias de Usuario y Actividad
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(2025, Calendar.JUNE, 20, 14, 30, 0);
+            java.util.Date utilFecha = calendar.getTime();
+            Date fecha = new Date(utilFecha.getTime());
 
-            // Tipo genérico para listas
-            Type tipoLista = new TypeToken<List<Actividad>>() {}.getType();
+            Actividad a1 = new Actividad(1, 1, fecha ,5.0f, 205.0, 10.0);
 
-            // Leer archivo JSON con permisos de lectura
-            FileReader reader = new FileReader("actividad.json");
-            List<Actividad> actividades = gson.fromJson(reader, tipoLista);
-			// usa Gson para convertir el contenido JSON  una list<Actividad>
-
-            // Mostrar resultados
-            for (Actividad a : actividades) {
-                System.out.println(a);
-            }
-
-        } catch (Exception e) { // Si ocurre cualuqier error, lo muestra en consola
-            e.printStackTrace();
-        }
-    }
-}
-
-
-
-/*
-Lee un archivo JSON que contiene una lista de actividades.
-
-Convierte ese JSON en objetos Java (Actividad).
-
-Imprime los datos de cada actividad.
-*/
-
+            
+            Almacenamiento almacenamiento = new Almacenamiento();
     
+            almacenamiento.guardarDatosEnArchivo(a1, "actividades.json");
+    
+            List<Actividad> listaActividades = new ArrayList<>();
+            
+    
+            listaActividades = almacenamiento.leerDatosDesdeArchivo("actividad1.json");
+    
+            imprimirActividades(listaActividades);
+           
+        }
+    
+    
+    public static void imprimirActividades(List<Actividad> actividades) {
+        /*
+         Recibe una lista de actividades y las imprime en consola.
+        */
+            for (Actividad actividad : actividades) {
+                System.out.println("ID: " + actividad.getId());
+                System.out.println("ID Usuario: " + actividad.getIdUsuario());
+                System.out.println("Fecha: " + actividad.getFecha());
+                System.out.println("KM Recorridos: " + actividad.getKmRecorridos());
+                System.out.println("Calorías Quemadas: " + actividad.getCaloriasQuemadas());
+                System.out.println("Velocidad Promedio: " + actividad.getVelocidadPromedio());
+                System.out.println("-----------------------------");
+            }
+        }
+    }   
+    
+      
+        
+            
+
+
