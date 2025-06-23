@@ -6,15 +6,40 @@ public class Repositorio {
 
     static Almacenamiento almacenamiento = new Almacenamiento();
 
-    public static void agregarActividad(Actividad actividad) {
+    public static void agregarActividad(Actividad nuevaActividad) {
 
-        almacenamiento.guardarDatosEnArchivo(actividad, "repositorioActividades.json", Actividad.class);
+        List<Actividad> registros = almacenamiento.leerDatosDesdeArchivo("repositorioActividades.json", Actividad.class);
+        
 
+        for (Actividad actividadRegistrada : registros) {
+            if (actividadRegistrada.getId() == nuevaActividad.getId()) {
+                System.out.println("Ya existe una actividad con el ID: " + nuevaActividad.getId());
+                return; 
+            }
+
+            
+        }
+
+        almacenamiento.guardarDatosEnArchivo(nuevaActividad, "repositorioActividades.json", Actividad.class);
+        System.out.println("Actividad correcrtamente registrada! \n");
     }
 
-    public static void agregarUsuario(Usuario usuario) {
+    public static void agregarUsuario(Usuario nuevoUsuario) {
 
-        almacenamiento.guardarDatosEnArchivo(usuario, "repositorioUsuarios.json", Usuario.class);
+        List<Usuario> registros = almacenamiento.leerDatosDesdeArchivo("repositorioUsuarios.json", Usuario.class);
+
+        for (Usuario usuario : registros) {
+
+            if (usuario.getId() == nuevoUsuario.getId()) {
+                System.out.println("Ya existe un usuario con el ID: " + nuevoUsuario.getId());
+                return;
+            }
+
+        }
+
+        almacenamiento.guardarDatosEnArchivo(nuevoUsuario, "repositorioUsuarios.json", Usuario.class);
+
+        System.out.println("Usuario correcrtamente registrado! \n");
     }
     
     

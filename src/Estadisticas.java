@@ -80,7 +80,7 @@ public double calcularVelocidadPromedio() {
     return total / actividades.size();
 }
 
-public List<Actividad> mejoresMarcas(int topN) {
+public List<Integer> mejoresMarcas(int topN) {
     List<Actividad> copia = new ArrayList<>(actividades);
 
     // Ordenar de mayor a menor velocidad promedio
@@ -94,16 +94,16 @@ public List<Actividad> mejoresMarcas(int topN) {
         }
     }
 
-    // Devolver los primeros N
-    List<Actividad> resultado = new ArrayList<>();
+    // Devolver los primeros N como enteros
+    List<Integer> resultado = new ArrayList<>();
     for (int i = 0; i < topN && i < copia.size(); i++) {
-        resultado.add(copia.get(i));
+        resultado.add((int) copia.get(i).getVelocidadPromedio());
     }
 
     return resultado;
 }
 
-public List<Actividad> mayoresDistancias(int topN) {
+public List<Integer> mayoresDistancias(int topN) {
     List<Actividad> copia = new ArrayList<>(actividades);
 
     // Ordenar de mayor a menor distancia
@@ -117,13 +117,12 @@ public List<Actividad> mayoresDistancias(int topN) {
         }
     }
 
-    // Devolver los primeros N
-    List<Actividad> resultado = new ArrayList<>();
+    // Devolver los primeros N como enteros
+    List<Integer> resultado = new ArrayList<>();
     for (int i = 0; i < topN && i < copia.size(); i++) {
-        resultado.add(copia.get(i));
+        resultado.add((int) copia.get(i).getKmRecorridos());
     }
 
     return resultado;
 }
-
 }

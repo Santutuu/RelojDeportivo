@@ -61,34 +61,5 @@
     "peso": 1.79,
     "altura": 75.0,
     "genero": "Masculino"
-  },
-  null,
-  null,
-  {
-    "id": 5,
-    "nombreCompleto": "Santiago Flotta",
-    "email": "sflotta@gmail.com",
-    "edad": 30,
-    "peso": 1.79,
-    "altura": 75.0,
-    "genero": "Masculino"
-  },
-  {
-    "id": 5,
-    "nombreCompleto": "Santiago Flotta",
-    "email": "sflotta@gmail.com",
-    "edad": 30,
-    "peso": 1.79,
-    "altura": 75.0,
-    "genero": "Masculino"
-  },
-  {
-    "id": 5,
-    "nombreCompleto": "Santiago Flotta",
-    "email": "sflotta@gmail.com",
-    "edad": 30,
-    "peso": 1.79,
-    "altura": 75.0,
-    "genero": "Masculino"
   }
 ]

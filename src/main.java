@@ -27,7 +27,6 @@ public class Main {
         Repositorio.agregarActividad(actividad1);
         Repositorio.agregarActividad(actividad2);
 
-        System.out.println("Actividad correcrtamente registrada: ");
 
         String consejos = new String();
         
@@ -63,14 +62,25 @@ public class Main {
 
         Estadisticas estadisticas = new Estadisticas(listaActividades);
 
+        List<Integer> mayoresDistancias = estadisticas.mayoresDistancias(3);
+        List<Integer> mejoresMarcas = estadisticas.mejoresMarcas(3);
+        
+
         System.out.println("Estadísticas para el usuario: " + usuario.getNombreCompleto());
         System.out.println("");
-        System.out.println("Promedio de KM recorridos: " + estadisticas.promedioKmRecorridos());
-        System.out.println("Calorías quemadas en el último mes: " + estadisticas.caloriasQuemadasMensualmente(new Date()));
+        System.out.println("Promedio de KM recorridos: " + estadisticas.promedioKmRecorridos() + " km por actividad");
+        System.out.println("Calorías quemadas en el último mes: " + estadisticas.caloriasQuemadasMensualmente(new Date()) + " Kcal");
         System.out.println("");
-        System.out.println("Top 3 mayores distancias: " + (estadisticas.mayoresDistancias(3)));
-        System.out.println("Top 3 mejores marcas: " + estadisticas.mejoresMarcas(3));
-        System.out.println("Top 3 mayores distancias: " + estadisticas.mayoresDistancias(3));
+        System.out.println("Top 3 mayores distancias: ");
+        for (int i = 0; i < mayoresDistancias.size(); i++) {
+            System.out.println((i + 1) + " ----> " + mayoresDistancias.get(i) + " km recorridos!");
+            }
+
+        System.out.println("\n Top 3 mejores marcas: ");
+        for (int i = 0; i < mejoresMarcas.size(); i++) {
+            System.out.println((i + 1) + " ----> " + mejoresMarcas.get(i) + " km recorridos!");
+        }
+        System.out.println("\nVelocidad promedio general: " + estadisticas.calcularVelocidadPromedio() + " Km/h");
         System.out.println();
     }
 
