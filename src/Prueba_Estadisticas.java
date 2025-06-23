@@ -64,7 +64,7 @@ class Prueba_Estadisticas {
         cal.set(2025, Calendar.JUNE, 27, 7, 45);    // 15
         Actividad a15 = new Actividad(15, 2, new Date(cal.getTimeInMillis()), 4.4f, 210.0, 50.0);
 
-         /* 
+        /* 
         Repositorio.agregarUsuario(u1);
         Repositorio.agregarUsuario(u2);
         Repositorio.agregarUsuario(u3);
@@ -105,9 +105,9 @@ class Prueba_Estadisticas {
 
         System.out.println("Calorías quemadas en el último mes: " + caloriasQuemadas);
 
+            String consejo;
 
 
-           String consejo;
 
             consejo = ConsejoMotivacional.seleccionarConsejoPersonalizado( u2, a11, a11.getVelocidadPromedio());
 

@@ -8,13 +8,13 @@ public class Repositorio {
 
     public static void agregarActividad(Actividad actividad) {
 
-        almacenamiento.guardarDatosEnArchivo(actividad, "repositorioActividades.json", true);
+        almacenamiento.guardarDatosEnArchivo(actividad, "repositorioActividades.json", Actividad.class);
 
     }
 
     public static void agregarUsuario(Usuario usuario) {
 
-        almacenamiento.guardarDatosEnArchivo(usuario, "repositorioUsuarios.json", true);
+        almacenamiento.guardarDatosEnArchivo(usuario, "repositorioUsuarios.json", Usuario.class);
     }
     
     
@@ -22,7 +22,7 @@ public class Repositorio {
 
         // Utiliza la clase Almacenamiento para leer las actividades desde el archivo
         
-        List<Actividad> actividades = almacenamiento.leerDatosDesdeArchivo("repositorioActividades.json");
+        List<Actividad> actividades = almacenamiento.leerDatosDesdeArchivo("repositorioActividades.json", Actividad.class);
         
         List<Actividad> actividadesUsuario = new ArrayList<>();
         
@@ -39,7 +39,7 @@ public class Repositorio {
         /*
         Busca un usuario por su ID en el repositorio de usuarios
         */ 
-        List<Usuario> usuarios = Almacenamiento.leerUsuariosDesdeArchivo("RepositorioUsuarios.json");
+        List<Usuario> usuarios = Almacenamiento.leerDatosDesdeArchivo("RepositorioUsuarios.json", Usuario.class);
 
         for (Usuario u : usuarios) {
             if (u.getId() == idBuscado) {

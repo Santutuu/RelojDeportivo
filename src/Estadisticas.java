@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
 
 
 public class Estadisticas {
@@ -66,26 +68,62 @@ public double caloriasQuemadasMensualmente(Date fechaFin) {
     return totalCalorias;
 }
 
+public double calcularVelocidadPromedio() {
+    if (actividades == null || actividades.isEmpty()) {
+        return 0;
+    }
 
+    double total = 0;
+    for (Actividad a : actividades) {
+        total += a.getVelocidadPromedio();
+    }
+    return total / actividades.size();
 }
 
-/*
-public float calcularVelocidad promedio {
-    return null;
+public List<Actividad> mejoresMarcas(int topN) {
+    List<Actividad> copia = new ArrayList<>(actividades);
+
+    // Ordenar de mayor a menor velocidad promedio
+    for (int i = 0; i < copia.size() - 1; i++) {
+        for (int j = i + 1; j < copia.size(); j++) {
+            if (copia.get(j).getVelocidadPromedio() > copia.get(i).getVelocidadPromedio()) {
+                Actividad temp = copia.get(i);
+                copia.set(i, copia.get(j));
+                copia.set(j, temp);
+            }
+        }
     }
 
-    public float caloriasQuemadasMensualmente() {
-        return null;
+    // Devolver los primeros N
+    List<Actividad> resultado = new ArrayList<>();
+    for (int i = 0; i < topN && i < copia.size(); i++) {
+        resultado.add(copia.get(i));
     }
 
-    mejoresMarcas() {
-        return null;    
-    }
-
-    mayoresDistancias(){
-        return null;
-    }
-    
+    return resultado;
 }
-} 
-*/
+
+public List<Actividad> mayoresDistancias(int topN) {
+    List<Actividad> copia = new ArrayList<>(actividades);
+
+    // Ordenar de mayor a menor distancia
+    for (int i = 0; i < copia.size() - 1; i++) {
+        for (int j = i + 1; j < copia.size(); j++) {
+            if (copia.get(j).getKmRecorridos() > copia.get(i).getKmRecorridos()) {
+                Actividad temp = copia.get(i);
+                copia.set(i, copia.get(j));
+                copia.set(j, temp);
+            }
+        }
+    }
+
+    // Devolver los primeros N
+    List<Actividad> resultado = new ArrayList<>();
+    for (int i = 0; i < topN && i < copia.size(); i++) {
+        resultado.add(copia.get(i));
+    }
+
+    return resultado;
+}
+
+}
