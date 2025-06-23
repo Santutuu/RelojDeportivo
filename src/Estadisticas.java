@@ -1,4 +1,7 @@
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
 
 public class Estadisticas {
 
@@ -35,6 +38,35 @@ public class Estadisticas {
         return (total / actividades.size());
     }
 }
+
+
+public double caloriasQuemadasMensualmente(Date fechaFin) {
+    /*
+     Calcula las calorías quemadas en el último mes hasta la fecha proporcionada.
+     Si no hay actividades, devuelve 0.
+     */
+    if (actividades == null || actividades.isEmpty()) {
+        return 0;
+    }
+
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(fechaFin);
+    cal.add(Calendar.MONTH, -1);
+    Date fechaInicio = cal.getTime();
+
+    double totalCalorias = 0;
+
+    for (Actividad a : actividades) {
+        Date fechaActividad = a.getFecha();
+        if (!fechaActividad.before(fechaInicio) && !fechaActividad.after(fechaFin)) {
+            totalCalorias += a.getCaloriasQuemadas();
+        }
+    }
+
+    return totalCalorias;
+}
+
+
 }
 
 /*

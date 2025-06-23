@@ -24,6 +24,9 @@ public class Usuario {
     
     }
 
+    public Usuario() {
+        
+    }
     // Métodos públicos (getters y setters)
     public int getId() {
         return id;

@@ -99,11 +99,27 @@ class Prueba_Estadisticas {
         float promedioKm = estadisticas.promedioKmRecorridos();
         System.out.println("Promedio de km recorridos: " + promedioKm);
 
+        // Calculo las calorías quemadas en el último mes hasta la fecha actual
+        Date fechaFin = new Date(); // Fecha actual
+        double caloriasQuemadas = estadisticas.caloriasQuemadasMensualmente(fechaFin);
 
+        System.out.println("Calorías quemadas en el último mes: " + caloriasQuemadas);
+
+
+
+           String consejo;
+
+            consejo = ConsejoMotivacional.seleccionarConsejoPersonalizado( u2, a11, a11.getVelocidadPromedio());
+
+            System.out.println(consejo);
 
 
     }
 
+    
+ 
+
+    
 
    
 }

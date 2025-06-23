@@ -18,7 +18,7 @@ public class Repositorio {
     }
     
     
-    public static List<Actividad> getActividadesPorUsuario(int idUsuario) {
+    public static List<Actividad> getActividadesPorUsuario(int idUsuario) { // Obtiene una lista de actividades asociadas a un usuario específico
 
         // Utiliza la clase Almacenamiento para leer las actividades desde el archivo
         
@@ -35,4 +35,20 @@ public class Repositorio {
         return actividadesUsuario;
     }
     
+    public static Usuario obtenerUsuarioPorId(int idBuscado) {  
+        /*
+        Busca un usuario por su ID en el repositorio de usuarios
+        */ 
+        List<Usuario> usuarios = Almacenamiento.leerUsuariosDesdeArchivo("RepositorioUsuarios.json");
+
+        for (Usuario u : usuarios) {
+            if (u.getId() == idBuscado) {
+                return u;
+            }
+        }
+        return null;
+}
+
+
+
 }

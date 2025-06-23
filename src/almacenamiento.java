@@ -16,7 +16,7 @@ public class Almacenamiento {
 
 
 
-public List<Actividad> leerDatosDesdeArchivo(String rutaArchivo) {
+public static List<Actividad> leerDatosDesdeArchivo(String rutaArchivo) {
     try {
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssX")
@@ -42,7 +42,34 @@ public List<Actividad> leerDatosDesdeArchivo(String rutaArchivo) {
         return Collections.emptyList();
     }
 }
-    
+
+
+
+public static List<Usuario> leerUsuariosDesdeArchivo(String rutaArchivo) {
+    try {
+        Gson gson = new Gson();
+
+        FileReader reader = new FileReader(rutaArchivo);
+        JsonElement jsonElement = JsonParser.parseReader(reader);
+
+        List<Usuario> usuarios = new ArrayList<>();
+
+        if (jsonElement.isJsonArray()) {
+            Type tipoLista = new TypeToken<List<Usuario>>() {}.getType();
+            usuarios = gson.fromJson(jsonElement, tipoLista);
+        } else if (jsonElement.isJsonObject()) {
+            Usuario u = gson.fromJson(jsonElement, Usuario.class);
+            usuarios.add(u);
+        }
+
+        return usuarios;
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        return Collections.emptyList();
+    }
+}
+
     
    
     public static <T> void guardarDatosEnArchivo(T objeto, String rutaArchivo, boolean append) {

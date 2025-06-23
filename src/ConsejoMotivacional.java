@@ -4,39 +4,54 @@ import java.util.List;
 
 public class ConsejoMotivacional {
 
-    private List<String> consejosBase;
+   
+    public static String seleccionarConsejoPersonalizado(Usuario usuario, Actividad ultimaActividad, double velocidadPromedio) {
 
-
-
-    public ConsejoMotivacional() {
-        this.consejosBase = List.of(
-            "¡Sigue adelante, cada paso cuenta!",
-            "La perseverancia es la clave del éxito.",
-            "No te rindas, los grandes logros requieren tiempo.",
-            "Cada día es una nueva oportunidad para mejorar.",
-            "Cree en ti mismo y en tus capacidades.",
-            "Muy buen tiempo, segui así.",
-            "No importa cuán lento vayas, siempre y cuando no te detengas.",
-            "Sos un verdaderro tiburon"
-            );
-            
-        
+    if (usuario == null || ultimaActividad == null) {
+        return "Datos insuficientes para generar un consejo personalizado.";
     }
 
-    public List<String> getConsejosBase() {
-        return consejosBase;
+    List<Actividad> actividades = usuario.obtenerActividades();
+    if (actividades == null || actividades.isEmpty()) {
+        return "Aún no hay suficientes actividades para comparar.";
     }
 
-    public void setConsejosBase(List<String> consejosBase) {
-        this.consejosBase = consejosBase;
+    Estadisticas estadisticas = new Estadisticas(actividades);
+    float promedioKm = estadisticas.promedioKmRecorridos();
+
+    // Calcular promedios de calorías y velocidad manualmente
+    double sumaCalorias = 0;
+    double sumaVelocidad = 0;
+
+    for (Actividad act : actividades) {
+        sumaCalorias += act.getCaloriasQuemadas();
+        sumaVelocidad += act.getVelocidadPromedio();
     }
 
-    String seleccionarConsejoPersonalizado(Usuario usuario, Actividad actividad, float velocidadPromedio) {
-        
-        if (usuario == null || actividad == null) {
-            return "Datos insuficientes para generar un consejo personalizado.";
-        }
-        return "hola";
+    double promedioCalorias = sumaCalorias / actividades.size();
+    double promedioVelocidad = sumaVelocidad / actividades.size();
+
+    StringBuilder consejo = new StringBuilder();
+
+    if (ultimaActividad.getKmRecorridos() > promedioKm) {
+        consejo.append("¡Recorriste más que tu promedio! Seguís avanzando\n");
+    } else {
+        consejo.append("Recorriste menos que otras veces. Cada paso cuenta\n");
     }
+
+    if (ultimaActividad.getCaloriasQuemadas() > promedioCalorias) {
+        consejo.append("¡Estás quemando más calorías que nunca!\n");
+    } else {
+        consejo.append("Hoy quemaste menos calorías. Lo importante es no parar\n");
+    }
+
+    if (ultimaActividad.getVelocidadPromedio() > promedioVelocidad) {
+        consejo.append("¡Impresionante! Superaste tu velocidad promedio\n");
+    } else {
+        consejo.append("Tu velocidad fue más baja que lo habitual. No te rindas, mañana será mejor\n");
+    }
+
+    return consejo.toString().trim();
+}
 
 }
