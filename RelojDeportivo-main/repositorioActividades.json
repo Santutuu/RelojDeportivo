@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "idUsuario": 1,
+    "fecha": "Jun 20, 2025, 2:30:00 PM",
+    "kmRecorridos": 5.0,
+    "caloriasQuemadas": 205.0,
+    "velocidadPromedio": 10.0
+  },
+  {
+    "id": 2,
+    "idUsuario": 2,
+    "fecha": "Jun 20, 2025, 6:00:48 PM",
+    "kmRecorridos": 4.0,
+    "caloriasQuemadas": 200.0,
+    "velocidadPromedio": 45.0
+  },
+  {
+    "id": 3,
+    "idUsuario": 1,
+    "fecha": "Jun 21, 2025, 7:30:48 AM",
+    "kmRecorridos": 5.0,
+    "caloriasQuemadas": 250.0,
+    "velocidadPromedio": 60.0
+  },
+  {
+    "id": 4,
+    "idUsuario": 3,
+    "fecha": "Jun 21, 2025, 7:00:48 PM",
+    "kmRecorridos": 4.2,
+    "caloriasQuemadas": 180.0,
+    "velocidadPromedio": 50.0
+  },
+  {
+    "id": 5,
+    "idUsuario": 4,
+    "fecha": "Jun 22, 2025, 9:00:48 AM",
+    "kmRecorridos": 3.0,
+    "caloriasQuemadas": 120.0,
+    "velocidadPromedio": 25.0
+  },
+  {
+    "id": 6,
+    "idUsuario": 1,
+    "fecha": "Jun 22, 2025, 7:30:48 PM",
+    "kmRecorridos": 6.0,
+    "caloriasQuemadas": 300.0,
+    "velocidadPromedio": 70.0
+  },
+  {
+    "id": 7,
+    "idUsuario": 2,
+    "fecha": "Jun 23, 2025, 6:45:48 AM",
+    "kmRecorridos": 5.5,
+    "caloriasQuemadas": 270.0,
+    "velocidadPromedio": 65.0
+  },
+  {
+    "id": 8,
+    "idUsuario": 3,
+    "fecha": "Jun 23, 2025, 8:15:48 PM",
+    "kmRecorridos": 4.5,
+    "caloriasQuemadas": 190.0,
+    "velocidadPromedio": 48.0
+  },
+  {
+    "id": 9,
+    "idUsuario": 4,
+    "fecha": "Jun 24, 2025, 7:00:48 AM",
+    "kmRecorridos": 2.8,
+    "caloriasQuemadas": 100.0,
+    "velocidadPromedio": 20.0
+  },
+  {
+    "id": 16,
+    "idUsuario": 5,
+    "fecha": "Jun 23, 2025, 9:39:51 AM",
+    "kmRecorridos": 10.0,
+    "caloriasQuemadas": 500.0,
+    "velocidadPromedio": 12.0
+  },
+  {
+    "id": 17,
+    "idUsuario": 5,
+    "fecha": "Jun 23, 2025, 9:39:51 AM",
+    "kmRecorridos": 15.0,
+    "caloriasQuemadas": 700.0,
+    "velocidadPromedio": 14.0
+  },
+  {
+    "id": 18,
+    "idUsuario": 1,
+    "fecha": "Jun 23, 2025, 11:00:34 AM",
+    "kmRecorridos": 3.2,
+    "caloriasQuemadas": 300.0,
+    "velocidadPromedio": 12.0
+  },
+  {
+    "id": 19,
+    "idUsuario": 1,
+    "fecha": "Jun 23, 2025, 11:00:34 AM",
+    "kmRecorridos": 15.0,
+    "caloriasQuemadas": 700.0,
+    "velocidadPromedio": 14.0
+  },
+  {
+    "id": 20,
+    "idUsuario": 1,
+    "fecha": "Jun 23, 2025, 11:14:53 AM",
+    "kmRecorridos": 5.0,
+    "caloriasQuemadas": 500.0,
+    "velocidadPromedio": 15.0
+  }
+]

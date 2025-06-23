@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "idUsuario": 101,
+    "fecha": "2025-06-18T07:30:00Z",
+    "kmRecorridos": 5.2,
+    "caloriasQuemadas": 320.5,
+    "velocidadPromedio": 10.4
+  },
+  {
+    "id": 2,
+    "idUsuario": 102,
+    "fecha": "2025-06-17T18:00:00Z",
+    "kmRecorridos": 3.8,
+    "caloriasQuemadas": 245.0,
+    "velocidadPromedio": 8.3
+  },
+  {
+    "id": 3,
+    "idUsuario": 101,
+    "fecha": "2025-06-16T20:15:00Z",
+    "kmRecorridos": 6.5,
+    "caloriasQuemadas": 410.8,
+    "velocidadPromedio": 9.7
+  }
+]
