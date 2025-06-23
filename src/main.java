@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
+        System.out.println("");
         Usuario u1 = Repositorio.obtenerUsuarioPorId(1);
         if (u1 != null) {
             estadisticasDelUsuario(u1);
@@ -17,31 +17,42 @@ public class Main {
             System.out.println("Usuario no encontrado.");
         }
 
-
-
-
-        Usuario usuario = new Usuario(5, "Santiago Flotta", "sflotta@gmail.com", 30, 1.79f, 75.0f, "Masculino");
-        Actividad actividad1 = new Actividad(16, 5, new Date(), 10.0f, 500.0f, 12.0f);
-        Actividad actividad2 = new Actividad(17, 5, new Date(), 15.0f, 700.0f, 14.0f);
-        Repositorio.agregarUsuario(usuario);
-        Repositorio.agregarActividad(actividad1);
-        Repositorio.agregarActividad(actividad2);
-
-
-        String consejos = new String();
+        // Creamos actividades, esto simula lo obtenido por el sensor del reloj
+        Actividad actividad1 = new Actividad(18, 1, new Date(), 3.2f, 300.0f, 12.0f);
+        Actividad actividad2 = new Actividad(20, 1, new Date(), 5.0f, 500.0f, 15.0f);
         
-        consejos = ConsejoMotivacional.seleccionarConsejoPersonalizado(usuario, actividad2, actividad2.getVelocidadPromedio());
-        System.out.println("Consejo: ");
-        System.out.println("---------------------------------");
-        System.out.println(consejos);
+        // Añadimos la actividad al repositorio
+        agregarActividad(u1, actividad2);
+        System.out.println(""); 
 
+        
+       
+        // Mostramos todas las actividades de ese usuario
+        System.out.println("Tus actividades: " + u1.getNombreCompleto() + ":\n");
+        List<Actividad> actividadesUsuario = Repositorio.getActividadesPorUsuario(u1.getId());
 
-        System.out.println();
-
-        System.out.println("Actividades del usuario " + usuario.getNombreCompleto() + ":");
-        List<Actividad> actividadesUsuario = Repositorio.getActividadesPorUsuario(usuario.getId());
         imprimirActividades(actividadesUsuario);
     }
+
+
+
+
+
+     public static void agregarActividad(Usuario usuario, Actividad nuevaActividad) {
+            Repositorio.agregarActividad(nuevaActividad);
+
+            // Mostramos consejos motivacionales personalizados basados en las actividades del usuario
+            String consejos = new String();
+
+            consejos = ConsejoMotivacional.seleccionarConsejoPersonalizado(usuario, nuevaActividad, nuevaActividad.getVelocidadPromedio());
+            System.out.println("Consejo: ");
+            System.out.println("---------------------------------");
+            System.out.println(consejos);
+        
+        }
+
+
+
 
     public static void estadisticasDelUsuario(Usuario usuario) {
         /*
@@ -92,7 +103,6 @@ public class Main {
         */
             for (Actividad actividad : actividades) {
                 System.out.println("ID: " + actividad.getId());
-                System.out.println("ID Usuario: " + actividad.getIdUsuario());
                 System.out.println("Fecha: " + actividad.getFecha());
                 System.out.println("KM Recorridos: " + actividad.getKmRecorridos());
                 System.out.println("Calorías Quemadas: " + actividad.getCaloriasQuemadas());

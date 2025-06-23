@@ -9,6 +9,7 @@ public class Actividad {
     private float kmRecorridos;
     private double caloriasQuemadas;
     private double velocidadPromedio;
+  
 
     
 
@@ -20,6 +21,7 @@ public Actividad(int id, int idUsuario, Date fecha ,float kmRecorridos, double c
         this.kmRecorridos = kmRecorridos;
         this.caloriasQuemadas = caloriasQuemadas;
         this.velocidadPromedio = velocidadPromedio;
+        
 }
 
 public Actividad() {

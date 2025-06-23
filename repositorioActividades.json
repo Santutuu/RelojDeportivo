@@ -86,5 +86,29 @@
     "kmRecorridos": 15.0,
     "caloriasQuemadas": 700.0,
     "velocidadPromedio": 14.0
+  },
+  {
+    "id": 18,
+    "idUsuario": 1,
+    "fecha": "Jun 23, 2025, 11:00:34 AM",
+    "kmRecorridos": 3.2,
+    "caloriasQuemadas": 300.0,
+    "velocidadPromedio": 12.0
+  },
+  {
+    "id": 19,
+    "idUsuario": 1,
+    "fecha": "Jun 23, 2025, 11:00:34 AM",
+    "kmRecorridos": 15.0,
+    "caloriasQuemadas": 700.0,
+    "velocidadPromedio": 14.0
+  },
+  {
+    "id": 20,
+    "idUsuario": 1,
+    "fecha": "Jun 23, 2025, 11:14:53 AM",
+    "kmRecorridos": 5.0,
+    "caloriasQuemadas": 500.0,
+    "velocidadPromedio": 15.0
   }
 ]
